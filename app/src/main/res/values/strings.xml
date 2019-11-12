@@ -1,4 +1,12 @@
 <resources>
     <string name="app_name">connectUsSocial</string>
     <string name="title_activity_maps">Map</string>
+    <string name="enter">ENTRAR</string>
+    <string name="textLogin">Não tem uma conta? Crie aqui!</string>
+    <string name="insert">Cadastrar</string>
+    <string name="button_photo">Photo</string>
+    <string name="contacts">Contatos</string>
+    <string name="logout">Logout</string>
+    <string name="btn_chat">Enviar</string>
+    <string name="message">Digite a mensagem</string>
 </resources>

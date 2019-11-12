@@ -1,0 +1,40 @@
+{
+  "project_info": {
+    "project_number": "559402564353",
+    "firebase_url": "https://connectusproject.firebaseio.com",
+    "project_id": "connectusproject",
+    "storage_bucket": "connectusproject.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:559402564353:android:0bd4f4808fba28e23fb900",
+        "android_client_info": {
+          "package_name": "com.example.connectussocial"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "559402564353-srgp8s1i8bo4p9e6mb0l58ukg553r34g.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDJdsPg6S4QbsCbA-AFfDgQveIcyXZLtEU"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "559402564353-srgp8s1i8bo4p9e6mb0l58ukg553r34g.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

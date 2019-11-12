@@ -9,6 +9,7 @@ import android.Manifest;
 import android.content.pm.*;
 import android.location.*;
 import android.os.*;
+import android.util.*;
 import android.widget.*;
 
 import com.google.android.gms.location.*;
@@ -38,6 +39,8 @@ public class MapsActivity extends FragmentActivity implements
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_maps);
+
+
 
 
         if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.M)
