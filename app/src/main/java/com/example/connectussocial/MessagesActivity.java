@@ -1,6 +1,8 @@
 package com.example.connectussocial;
 
+import androidx.annotation.*;
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.recyclerview.widget.*;
 
 import android.content.*;
 import android.os.Bundle;
@@ -8,18 +10,55 @@ import android.view.*;
 import android.widget.*;
 
 import com.google.firebase.auth.*;
+import com.google.firebase.firestore.*;
+import com.google.firebase.firestore.EventListener;
+import com.squareup.picasso.*;
+import com.xwray.groupie.*;
+
+import java.util.*;
 
 public class MessagesActivity extends AppCompatActivity {
 
 
+    private GroupAdapter adapter;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.act_messages);
 
-        verifyAuthentication();
+        RecyclerView rv = findViewById(R.id.recycler_contact);
+        rv.setLayoutManager(new LinearLayoutManager(this));
 
+        adapter = new GroupAdapter();
+        rv.setAdapter(adapter);
+        verifyAuthentication();
+        fetchLastMessage();
+
+    }
+
+    private void fetchLastMessage() {
+       String uid = FirebaseAuth.getInstance().getUid();
+
+        FirebaseFirestore.getInstance().collection("/last-messages")
+                .document(uid)
+                .collection("contacts")
+                .addSnapshotListener(new EventListener<QuerySnapshot>() {
+                    @Override
+                    public void onEvent(@Nullable QuerySnapshot queryDocumentSnapshots, @Nullable FirebaseFirestoreException e) {
+                        List<DocumentChange> documentChanges = queryDocumentSnapshots.getDocumentChanges();
+
+                        if (documentChanges != null) {
+                            for (DocumentChange doc: documentChanges) {
+                                if (doc.getType() == DocumentChange.Type.ADDED) {
+                                    Contact contact = doc.getDocument().toObject(Contact.class);
+
+                                    adapter.add(new ContactItem(contact));
+                                }
+                            }
+                        }
+                    }
+                });
     }
 
     private void verifyAuthentication() {
@@ -50,5 +89,37 @@ public class MessagesActivity extends AppCompatActivity {
 
         }
         return super.onOptionsItemSelected(item);
+    }
+    public void nextActivity(View view) {
+        Intent intent = new Intent(MessagesActivity.this, LoginPerfilActivity.class);
+        startActivity(intent);
+    }
+
+    private class ContactItem extends Item<ViewHolder> {
+
+        private final Contact contact;
+
+        private ContactItem(Contact contact) {
+            this.contact = contact;
+        }
+
+        @Override
+        public void bind(@NonNull ViewHolder viewHolder, int position) {
+            TextView username =  viewHolder.itemView.findViewById(R.id.textView);
+            TextView message =  viewHolder.itemView.findViewById(R.id.textView2);
+            ImageView imgPhoto =  viewHolder.itemView.findViewById(R.id.imageView);
+
+            username.setText(contact.getUsername());
+            message.setText(contact.getLastMessage());
+            Picasso.get()
+                    .load(contact.getPhotoUrl())
+                    .into(imgPhoto);
+
+        }
+
+        @Override
+        public int getLayout() {
+            return R.layout.item_user_message;
+        }
     }
 }

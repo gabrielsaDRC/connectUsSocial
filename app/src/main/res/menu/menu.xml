@@ -10,4 +10,8 @@
         android:title="@string/logout"
         app:showAsAction="always" />
 
+    <item android:id="@+id/perfil"
+        android:title="@string/perfil"
+        app:showAsAction="always" />
+
 </menu>
