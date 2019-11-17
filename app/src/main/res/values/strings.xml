@@ -16,10 +16,11 @@
     <string name="register">Registrar</string>
     <string name="full_name">Nome inteiro</string>
     <string name="confirm_password">Digite a senha novamente</string>
-    <string name="already_having_account">Você já tem uma conta?</string>
+    <string name="already_having_account">Você já tem um perfil?</string>
     <string name="log_in">Entrar</string>
-    <string name="not_having_account">Não tem uma conta?</string>
+    <string name="not_having_account">Não tem um perfil?</string>
     <string name="sign_up">Cadastre-se</string>
     <string name="messages">Chat</string>
     <string name="perfil">Perfil</string>
+    <string name="mapa">Mapa</string>
 </resources>

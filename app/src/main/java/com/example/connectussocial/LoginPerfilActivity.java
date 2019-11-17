@@ -152,7 +152,7 @@ public class LoginPerfilActivity extends AppCompatActivity {
     }
 
     public void nextActivity(View view) {
-        Intent intent = new Intent(LoginPerfilActivity.this, MapsActivity.class);
+        Intent intent = new Intent(LoginPerfilActivity.this, PerfilActivity.class);
         startActivity(intent);
     }
 }

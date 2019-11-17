@@ -84,7 +84,6 @@ public class ContactsActivity extends AppCompatActivity {
             Picasso.get()
                     .load(user.getProfileUrl())
                     .into(imgPhoto);
-
         }
 
         @Override

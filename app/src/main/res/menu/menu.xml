@@ -13,5 +13,7 @@
     <item android:id="@+id/perfil"
         android:title="@string/perfil"
         app:showAsAction="always" />
-
+    <item android:id="@+id/maps"
+        android:title="@string/mapa"
+        app:showAsAction="always" />
 </menu>

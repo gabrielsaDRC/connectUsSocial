@@ -86,7 +86,13 @@ public class MessagesActivity extends AppCompatActivity {
                 FirebaseAuth.getInstance().signOut();
                 verifyAuthentication();
                 break;
-
+            case R.id.perfil:
+                Intent intentPerfil = new Intent(MessagesActivity.this, LoginPerfilActivity.class);
+                startActivity(intentPerfil);
+                break;
+            case R.id.maps:
+                Intent intentMap = new Intent(MessagesActivity.this, MapsActivity.class);
+                startActivity(intentMap);
         }
         return super.onOptionsItemSelected(item);
     }

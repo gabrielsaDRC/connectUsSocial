@@ -29,7 +29,8 @@
         <activity android:name=".DashboardActivitity" />
         <activity android:name=".LoginPerfilActivity"
             android:theme="@style/Theme.AppCompat.Light.NoActionBar" />
-        <activity android:name=".PerfilActivity" />
+        <activity android:name=".PerfilActivity"
+            android:theme="@style/Theme.AppCompat.Light.NoActionBar"/>
         <activity android:name=".ChatActivity">
             <meta-data
                 android:name="android.support.PARENT_ACTIVITY"
@@ -42,8 +43,7 @@
                 android:name="android.support.PARENT_ACTIVITY"
                 android:value=".MessagesActivity" />
         </activity>
-        <activity android:name=".MessagesActivity"
-            android:label="@string/messages">>
+        <activity android:name=".MessagesActivity">
         </activity>
         <activity android:name=".RegisterActivity"
             android:theme="@style/Theme.AppCompat.Light.NoActionBar"/>
