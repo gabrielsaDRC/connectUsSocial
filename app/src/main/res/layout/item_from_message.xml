@@ -4,6 +4,7 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
+    android:background="#304769"
     android:layout_height="wrap_content">
 
     <de.hdodenhof.circleimageview.CircleImageView
@@ -25,6 +26,7 @@
         android:maxWidth="240dp"
         android:padding="8dp"
         android:text="TextView"
+        android:textColor="@android:color/white"
         app:layout_constraintStart_toEndOf="@+id/img_message_user"
         app:layout_constraintTop_toTopOf="@+id/img_message_user" />
 </androidx.constraintlayout.widget.ConstraintLayout>

@@ -4,6 +4,7 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
+    android:background="#304769"
     android:layout_height="wrap_content">
 
     <de.hdodenhof.circleimageview.CircleImageView
@@ -24,6 +25,7 @@
         android:background="@drawable/bg_edittext_rounded"
         android:maxWidth="240dp"
         android:padding="8dp"
+        android:textColor="@android:color/white"
         android:text="TextView"
         app:layout_constraintEnd_toStartOf="@+id/img_message_user"
         app:layout_constraintTop_toTopOf="@+id/img_message_user" />
